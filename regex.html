@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacoes</title </head>
+    <script type="text/javascript" language="javascript">
+        function valida() {
+
+            var teste = document.frmvalida.teste.value;
+            var er = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+
+
+            if (!er.exec(teste)) {
+                alert(" !!!!! Caracteres fora da Expressao Regular !!!!! ");
+                return false;
+            } else {
+                alert("Caracteres aceitos pela Expressao Regular");
+                return true;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return valida();" name="frmvalida" method="post" action="">
+        <label> Cadeia de Caracter: </label> <input type="text" name="teste"> </input>
+        <input type="submit" value="validar">
+    </form>
+</body>
+
+</html>
